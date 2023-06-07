@@ -17,7 +17,7 @@ const fetchImage = async (): Promise<Image> => {
 }
 
 
-const IndexPage: NextPage<Props> = ({initialImageUrl}) => {
+const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
 
 	const [imageUrl, setImageUrl] = useState(initialImageUrl)
 	const [loading, setLoading] = useState(false)
@@ -37,10 +37,16 @@ const IndexPage: NextPage<Props> = ({initialImageUrl}) => {
 	// }, [])
 
 	return (
-	<div className={styles.page}>
-	<button onClick={handleclick} className={styles.button}>他のにゃんこも見る</button>
-	<div className={styles.frame}>{loading || <img className={styles.img} src={imageUrl} />}</div>
-	</div>)
+		<div className={styles.page}>
+			<button onClick={handleclick} style={{
+				backgroundColor: "#319795",
+				border: "none",
+				borderRadius: "4px",
+				color: "white",
+				padding: "4px 8px",
+			}}>今日のにゃんこ🐱</button>
+			<div className={styles.frame}>{loading || <img className={styles.img} src={imageUrl} />}</div>
+		</div>)
 }
 
 // Server Side Rendering
